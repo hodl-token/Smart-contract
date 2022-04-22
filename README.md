@@ -82,8 +82,9 @@ Upgrade to v7 by @Julek23
           * 12.861% liquidy
           * 9,639% marketing
           * 3,213% team
-          * 64,287% bnbpool
-        Our tokenoics instead says 10% Reflection, 10% Marketing, 20% Liquidity, 60% BNBpool. I changed the contract so we fullfill the tokenomics.
+          * 64,287% bnbpool  
+          
+         Our tokenomics instead says 10% Reflection, 10% Marketing, 20% Liquidity, 60% BNBpool. I changed the contract so we fullfill the tokenomics.
       * Currently the sell bot is only triggered if someone sells on pancakeswap. In the upgraded contract the sell bot is triggered on every sell regardless the DEX.
       * This also activates the 'Anti-dump' mechanism on every DEX.
       * A new function 'triggerSwapAndLiquify' can be called from the triggerwallet. The triggerwallet could be changed by the owner. This function calls the swap and liquify (the sell bot).
