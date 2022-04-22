@@ -1882,7 +1882,7 @@ contract HODL is Context, IBEP20, Ownable, ReentrancyGuard {
 
             // update claimed rewards
             userClaimedBNB[msg.sender] += rewardBNB;
-            totalClaimedBNB = totalClaimedBNB.add(rewardBNB);
+            totalClaimedBNB += rewardBNB;
         }
 
         // update rewardCycleBlock
@@ -2259,8 +2259,7 @@ contract HODL is Context, IBEP20, Ownable, ReentrancyGuard {
         pairAddresses[_pairAddress] = _enable;
     }
 
-    function initializeUpgradedContract(address _triggerWallet) public {
-        require(address(triggerwallet) == address(0), "Already initialized the upgrade");
+    function initializeUpgradedContract(address _triggerWallet) public onlyOwner {
         bnbClaimTax = LayerTax(10, 10, 10, 10, 10, 20);
         reinvestTax = LayerTax(10, 10, 10, 10, 10, 20);
         tokenomics = Tokenomics(60, 20, 10, 10, 0);
